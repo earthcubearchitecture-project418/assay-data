@@ -5,6 +5,7 @@
   * [Other Classes by Provider](#other-classes-provider)
   * [Properties by Provider](#properties-provider)
   * [Other Properties by Provider](#other-properties-provider)
+  * [Properties by Count](#properties-count)
 * [Vocabulary](#vocabulary)
 * [Organization](#organization)
   * [Logo](#resource-logo)
@@ -115,6 +116,20 @@ WHERE {
   FILTER (!REGEX(?property, "http://schema.org", "i"))
 }
 ORDER BY ?graph ?class ?property
+```
+<a id="properties-count"></a>
+### Properties by Count ###
+```
+SELECT ?property (COUNT(*) AS ?used) 
+WHERE {
+  GRAPH ?graph {
+    ?s ?property ?o .
+    FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+    FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+    FILTER (?graph != <http://localhost:8890/sparql>)
+    FILTER (?graph != <http://geolink>)
+  }
+} GROUP BY ?property ORDER BY DESC(?used)
 ```
 <a id="vocabulary"></a>
 ## Vocabulary ##
