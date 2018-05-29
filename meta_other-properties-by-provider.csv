@@ -1,0 +1,5 @@
+"graph","class","property"
+"http://bcodmo","http://schema.org/Dataset","https://geodex.org/voc/fundedBy"
+"http://ieda","http://schema.org/DataDownload","http://www.w3.org/ns/dcat#accessURL"
+"http://ocd","http://schema.org/Organization","http://example.org/re3data/0.1/datalicense"
+"http://ocd","http://schema.org/Organization","http://example.org/re3data/0.1/keyword"
