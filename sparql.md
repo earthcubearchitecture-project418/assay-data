@@ -10,6 +10,7 @@
 * [Organization](#organization)
   * [Logo](#resource-logo)
 * [Dataset](#dataset)
+  * [License](#dataset-license)
 <hr/>
 
 <a id="meta"></a>
@@ -150,6 +151,18 @@ ORDER BY ?graph
 ```
 <a id="dataset"></a>
 ## Dataset ##
+
+<a id="dataset-license"></a>
+### License ###
+```
+SELECT DISTINCT ?graph ?license ?class
+WHERE { 
+  GRAPH ?graph { 
+    ?s <http://schema.org/license> ?license .
+    OPTIONAL { ?s a ?class }
+  }
+}
+```
 
 
 Back to [Top](#top)
