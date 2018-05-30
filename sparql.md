@@ -3,6 +3,7 @@
 * [Meta](#meta)
   * [Triple Count](#triple-count)
   * [Entity Count](#entity-count)
+  * [Distinct Resource URI Count](#resource-count)
   * [Classes by Provider](#classes-provider)
   * [Other Classes by Provider](#other-classes-provider)
   * [Properties by Provider](#properties-provider)
@@ -74,6 +75,51 @@ WHERE {
   FILTER (?graph != <http://localhost:8890/DAV/>)
 } ORDER BY DESC(?entity_count)
 ```
+
+<a id="resource-count"></a>
+### Distinct Resource URI Count ###
+```
+SELECT (COUNT(DISTINCT ?s ) AS ?resource_count)
+WHERE { 
+  GRAPH ?graph { { ?s ?p ?o  } UNION { ?o ?p ?s } FILTER(!isBlank(?s) && !isLiteral(?s)) } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} ORDER BY DESC(?resource_count)
+```
+### Distinct Resource URI Count by Provider###
+```
+SELECT DISTINCT ?graph (COUNT(DISTINCT ?s ) AS ?resource_count)
+WHERE { 
+  GRAPH ?graph { { ?s ?p ?o  } UNION { ?o ?p ?s } FILTER(!isBlank(?s) && !isLiteral(?s)) } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} ORDER BY DESC(?resource_count)
+```
+
+<a id="class-instance-count"></a>
+### Class Instance Count ###
+```
+SELECT ?class (COUNT(?s) AS ?count )
+WHERE { 
+  GRAPH ?graph { ?s a ?class } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} GROUP BY ?class ORDER BY DESC(?count)
+```
+### Class Instance Count by Provider ###
+
 
 <a id="classes-provider"></a>
 ### Classes by Provider ###
