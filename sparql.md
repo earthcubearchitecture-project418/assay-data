@@ -14,7 +14,8 @@
   * [Logo](#resource-logo)
 * [Dataset](#dataset)
   * [License](#dataset-license)
-  * Identifier Type(#identifier-type)
+  * [Identifier Type](#identifier-type)
+  * [Identifier Scheme(#identifier-scheme)
 <hr/>
 
 <a id="meta"></a>
@@ -241,6 +242,23 @@ WHERE {
 <a id="vocabulary"></a>
 ## Vocabulary ##
 
+<a id="vocab-identifier-count"></a>
+### Schema.org Identifier Count ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?graph ?class ?id_scheme COUNT(?identifier) as ?identifier_count
+WHERE { 
+  GRAPH ?graph { 
+   ?s a ?class .
+   ?s schema:identifier ?identifier .
+   ?identifier schema:propertyID ?id_scheme .
+  }
+} 
+GROUP BY ?graph ?class ?id_scheme
+ORDER BY ?identifier_count
+```
+
+
 <a id="organization"></a>
 ## Organization ##
 ### Logo ###
@@ -296,6 +314,20 @@ WHERE {
    FILTER (?graph != <http://geolink>)
    FILTER (?graph != <http://www.w3.org/ns/ldp#>)
    FILTER (?graph != <http://localhost:8890/DAV/>)
+  }
+} 
+```
+
+<a id="identifier-scheme"></a>
+### Identifier Scheme ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?graph ?id_scheme
+WHERE { 
+  GRAPH ?graph { 
+   ?s a schema:Dataset .
+   ?s schema:identifier ?identifier .
+   ?identifier schema:propertyID ?id_scheme .
   }
 } 
 ```
