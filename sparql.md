@@ -14,6 +14,7 @@
   * [Logo](#resource-logo)
 * [Dataset](#dataset)
   * [License](#dataset-license)
+  * Identifier Type(#identifier-type)
 <hr/>
 
 <a id="meta"></a>
@@ -279,5 +280,24 @@ WHERE {
 ORDER BY DESC(?number_of_licenses)
 ```
 
+<a id="identifier-type"></a>
+### Identifier Type ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?graph ?class IF(isLiteral(?identifier), "literal", "resource") as ?id_type
+WHERE { 
+  GRAPH ?graph { 
+   ?s a schema:Dataset .
+   ?s schema:identifier ?identifier .
+   OPTIONAL { ?s a ?class } 
+   FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+   FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+   FILTER (?graph != <http://localhost:8890/sparql>)
+   FILTER (?graph != <http://geolink>)
+   FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+   FILTER (?graph != <http://localhost:8890/DAV/>)
+  }
+} 
+```
 
 Back to [Top](#top)
