@@ -163,6 +163,16 @@ WHERE {
   }
 }
 ```
+### License Count by Provider ###
+```
+SELECT DISTINCT ?graph COUNT(DISTINCT ?s) as ?number_of_licenses
+WHERE { 
+  GRAPH ?graph { 
+    ?s <http://schema.org/license> ?license .
+  }
+} 
+ORDER BY DESC(?number_of_licenses)
+```
 
 
 Back to [Top](#top)
