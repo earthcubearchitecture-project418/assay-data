@@ -1,6 +1,7 @@
 <a id="top"></a>
 ## Table of Contents ##
 * [Meta](#meta)
+  * [Count Triples by Provider](#triple-count-provider)
   * [Classes by Provider](#classes-provider)
   * [Other Classes by Provider](#other-classes-provider)
   * [Properties by Provider](#properties-provider)
@@ -15,6 +16,22 @@
 
 <a id="meta"></a>
 ## Meta ##
+
+<a id="triple-count-provider"></a>
+### Number of Triples by Provider ###
+```
+SELECT DISTINCT ?graph COUNT(?s) as ?num_triples 
+WHERE { 
+  GRAPH ?graph { ?s ?p ?o } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} 
+ORDER BY DESC(?num_triples)
+```
 
 <a id="classes-provider"></a>
 ### Classes by Provider ###
