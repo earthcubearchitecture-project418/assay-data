@@ -17,7 +17,7 @@
 * [Dataset](#dataset)
   * [License](#dataset-license)
   * [Identifier Type](#identifier-type)
-  * [Identifier Scheme(#identifier-scheme)
+  * [Identifier Scheme](#identifier-scheme)
 <hr/>
 
 <a id="meta"></a>
