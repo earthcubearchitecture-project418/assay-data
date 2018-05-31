@@ -11,6 +11,7 @@
   * [Properties by Count](#properties-count)
 * [Vocabulary](#vocabulary)
   * [Identifier Count](#vocab-identifier-count)
+  * [ORCID Count by Provider](#vocab-orcid-count-provider)
 * [Organization](#organization)
   * [Logo](#resource-logo)
 * [Dataset](#dataset)
@@ -259,6 +260,7 @@ GROUP BY ?graph ?class ?id_scheme
 ORDER BY ?identifier_count
 ```
 
+<a id="vocab-orcid-count-provider"></a>
 ### ORCID Count by Provider ###
 ```
 PREFIX schema: <http://schema.org/>
