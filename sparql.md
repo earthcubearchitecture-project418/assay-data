@@ -10,6 +10,7 @@
   * [Other Properties by Provider](#other-properties-provider)
   * [Properties by Count](#properties-count)
 * [Vocabulary](#vocabulary)
+  * [Identifier Count](#vocab-identifier-count)
 * [Organization](#organization)
   * [Logo](#resource-logo)
 * [Dataset](#dataset)
@@ -258,6 +259,18 @@ GROUP BY ?graph ?class ?id_scheme
 ORDER BY ?identifier_count
 ```
 
+### ORCID Count by Provider ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g COUNT(DISTINCT ?s) as ?orcids
+
+WHERE { 
+  GRAPH ?g {
+   ?s ?p ?o
+   FILTER REGEX(str(?s), "orcid.org", "i")
+  }
+} 
+```
 
 <a id="organization"></a>
 ## Organization ##
