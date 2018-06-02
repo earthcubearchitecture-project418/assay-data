@@ -21,6 +21,7 @@
   * [Identifier Scheme](#identifier-scheme)
   * [VariableMeasured Usage](#dataset-variable-usage)
   * [Distributions](#dataset-distribution)
+  * [Spatial](#dataset-spatial)
   * [Temporal](#dataset-temporal)
 <hr/>
 
@@ -433,6 +434,20 @@ WHERE {
 } 
 GROUP BY ?p
 ORDER BY DESC(?num_providers)
+```
+
+<a id="dataset-spatial"></a>
+### Spatial Coverage ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g COUNT(?spatial_coverage) as ?num_coverages
+WHERE { 
+  GRAPH ?g {
+    ?s a schema:Dataset .
+    ?s schema:spatialCoverage ?spatial_coverage .
+  }
+}
+ORDER BY ?g
 ```
 
 <a id="dataset-temporal"></a>
