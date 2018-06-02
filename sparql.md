@@ -21,6 +21,7 @@
   * [Identifier Scheme](#identifier-scheme)
   * [VariableMeasured Usage](#dataset-variable-usage)
   * [Distributions](#dataset-distribution)
+  * [Temporal](#dataset-temporal)
 <hr/>
 
 <a id="meta"></a>
@@ -432,6 +433,20 @@ WHERE {
 } 
 GROUP BY ?p
 ORDER BY DESC(?num_providers)
+```
+
+<a id="dataset-temporal"></a>
+### Temporal Coverage ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g COUNT(?temporal_coverage) as ?num_coverages
+WHERE { 
+  GRAPH ?g {
+    ?s a schema:Dataset .
+    ?s schema:temporalCoverage ?temporal_coverage .
+  }
+}
+ORDER BY ?g
 ```
 
 Back to [Top](#top)
