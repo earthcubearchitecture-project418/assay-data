@@ -1,0 +1,9 @@
+"graph","class","id_scheme","identifier_count"
+"http://bcodmo","http://schema.org/WebSite","http://purl.org/spar/datacite/doi",1
+"http://bcodmo","http://schema.org/WebPage","http://purl.org/spar/datacite/doi",1
+"http://bcodmo","http://schema.org/Service","http://purl.org/spar/datacite/doi",1
+"http://bcodmo","http://schema.org/Organization","http://purl.org/spar/datacite/doi",4
+"http://opentopography","http://schema.org/DataCatalog","datacite:doi",399
+"http://bcodmo","http://schema.org/Dataset","http://purl.org/spar/datacite/doi",4088
+"http://ieda","http://schema.org/Dataset","http://purl.org/spar/datacite/doi",6025
+"http://ieda","http://schema.org/CreativeWork","IGSN",27716
