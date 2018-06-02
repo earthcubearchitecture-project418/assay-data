@@ -17,6 +17,7 @@
   * [Potential Action Endpoints](#org-potential-action)
 * [Dataset](#dataset)
   * [License](#dataset-license)
+  * [Authors](#dataset-authors)
   * [Identifier Usage](#identifier-usage)
   * [Identifier Scheme](#identifier-scheme)
   * [VariableMeasured Usage](#dataset-variable-usage)
@@ -345,6 +346,26 @@ WHERE {
   }
 } 
 ORDER BY DESC(?number_of_licenses)
+```
+
+<a id="dataset-authors"></a>
+### Authors ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g ?role IF(BOUND(?role_type), ?role_type, ?person_type) as ?type
+WHERE { 
+  VALUES ?role { schema:creator schema:contributor schema:author }
+  GRAPH ?g {
+    ?s a schema:Dataset .
+    ?s ?role ?author .
+    ?author a ?person_type .
+    OPTIONAL {
+      ?author a schema:Role .
+      ?author ?role [ rdf:type ?role_type ] .
+    }
+  }
+}
+ORDER BY ?g
 ```
 
 <a id="identifier-usage"></a>
