@@ -14,10 +14,13 @@
   * [ORCID Count by Provider](#vocab-orcid-count-provider)
 * [Organization](#organization)
   * [Logo](#resource-logo)
+  * [Potential Action Endpoints](#org-potential-action)
 * [Dataset](#dataset)
   * [License](#dataset-license)
-  * [Identifier Type](#identifier-type)
+  * [Identifier Usage](#identifier-usage)
   * [Identifier Scheme](#identifier-scheme)
+  * [VariableMeasured Usage](#dataset-variable-usage)
+  * [Distributions](#dataset-distribution)
 <hr/>
 
 <a id="meta"></a>
@@ -288,6 +291,35 @@ WHERE {
 }
 ORDER BY ?graph
 ```
+
+<a id="org-potential-action"></a>
+### Organization Potential Action Endpoints ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g ?class IF(?url_template, ?url_template, ?target) as ?action_url ?p ?o
+WHERE { 
+  GRAPH ?g {
+    ?s schema:potentialAction ?action .
+    ?s a ?class . 
+    OPTIONAL { 
+      FILTER NOT EXISTS { ?action rdf:type ?o }
+      FILTER NOT EXISTS { ?action rdfs:seeAlso ?o }
+      OPTIONAL { 
+        ?action schema:target ?target . 
+        OPTIONAL { 
+          ?target a schema:EntryPoint . 
+          ?target schema:urlTemplate ?url_template .
+          ?target ?p ?o
+        }
+      }
+      OPTIONAL { 
+        ?action schema:query-input ?query_input . 
+      }
+    }
+  }
+}
+ORDER BY ?g ?class ?action_url ?query_input
+```
 <a id="dataset"></a>
 ## Dataset ##
 
@@ -313,8 +345,8 @@ WHERE {
 ORDER BY DESC(?number_of_licenses)
 ```
 
-<a id="identifier-type"></a>
-### Identifier Type ###
+<a id="identifier-usage"></a>
+### Identifier Usage ###
 ```
 PREFIX schema: <http://schema.org/>
 SELECT DISTINCT ?graph ?class IF(isLiteral(?identifier), "literal", "resource") as ?id_type
@@ -322,13 +354,6 @@ WHERE {
   GRAPH ?graph { 
    ?s a schema:Dataset .
    ?s schema:identifier ?identifier .
-   OPTIONAL { ?s a ?class } 
-   FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
-   FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
-   FILTER (?graph != <http://localhost:8890/sparql>)
-   FILTER (?graph != <http://geolink>)
-   FILTER (?graph != <http://www.w3.org/ns/ldp#>)
-   FILTER (?graph != <http://localhost:8890/DAV/>)
   }
 } 
 ```
@@ -345,6 +370,68 @@ WHERE {
    ?identifier schema:propertyID ?id_scheme .
   }
 } 
+```
+
+<a id="dataset-variable-usage"></a>
+### VariableMeasured Usage ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g
+WHERE { 
+  GRAPH ?g {
+   ?s a schema:Dataset .
+   ?s schema:variableMeasured ?var .
+  }
+} 
+ORDER BY ?g
+```
+
+<a id="dataset-distribution"></a>
+### Distribution Usage ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g
+WHERE { 
+  GRAPH ?g {
+   ?s a schema:Dataset .
+   ?s schema:distribution ?distro .
+  }
+} 
+ORDER BY ?g
+```
+
+### Distribution Properties by Provider ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?g ?p
+WHERE { 
+  GRAPH ?g {
+   ?s a schema:Dataset .
+   ?s schema:distribution ?distro .
+   OPTIONAL { 
+     ?distro ?p ?o 
+     FILTER NOT EXISTS { ?distro rdfs:seeAlso ?o }
+   }
+  }
+} 
+ORDER BY ?g ?p
+```
+### Distribution properties by popularity ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?p COUNT(DISTINCT ?g) as ?num_providers
+WHERE { 
+  GRAPH ?g {
+   ?s a schema:Dataset .
+   ?s schema:distribution ?distro .
+   OPTIONAL { 
+     ?distro ?p ?o 
+     FILTER NOT EXISTS { ?distro rdfs:seeAlso ?o }
+   }
+  }
+} 
+GROUP BY ?p
+ORDER BY DESC(?num_providers)
 ```
 
 Back to [Top](#top)
