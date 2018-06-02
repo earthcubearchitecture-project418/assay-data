@@ -1,11 +1,11 @@
 "graph","resource_count"
-"http://bcodmo",93770
-"http://neotoma",20733
-"http://ieda",19041
-"http://ocd",18198
-"http://unavco",8059
-"http://earthref",1854
-"http://wikilinkedearth",1710
-"http://opentopography",1233
-"http://balto.org",189
-"http://iris",32
+"BCO-DMO",93770
+"Neotoma",20733
+"IEDA",19041
+"Open Core Data",18198
+"UNAVCO",8059
+"MagIC",1854
+"LinkedEarth",1710
+"Open Topography",1233
+"BALTO",189
+"IRIS",32

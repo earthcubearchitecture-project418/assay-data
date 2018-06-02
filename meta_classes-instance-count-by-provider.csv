@@ -1,104 +1,104 @@
 "graph","class","count"
-"http://balto.org","http://schema.orgPropertyValue",1593
-"http://balto.org","http://schema.org/Dataset",106
-"http://balto.org","http://schema.orgDataset",59
-"http://balto.org","http://schema.orgDataCatalog",59
-"http://balto.org","http://schema.org/Organization",16
-"http://balto.org","http://schema.org/DataCatalog",16
-"http://balto.org","http://schema.org/PostalAddress",16
-"http://bcodmo","http://schema.org/PropertyValue",69597
-"http://bcodmo","http://schema.org/CreativeWork",9755
-"http://bcodmo","http://schema.org/Role",9150
-"http://bcodmo","http://schema.org/Place",9081
-"http://bcodmo","http://schema.org/Organization",4240
-"http://bcodmo","http://schema.org/Dataset",4088
-"http://bcodmo","http://schema.org/DataDownload",3492
-"http://bcodmo","http://schema.org/Event",2067
-"http://bcodmo","http://schema.org/Person",1732
-"http://bcodmo","http://schema.org/Offer",1154
-"http://bcodmo","http://schema.org/GeoShape",792
-"http://bcodmo","http://schema.org/Vehicle",228
-"http://bcodmo","http://schema.org/Service",7
-"http://bcodmo","http://schema.org/DigitalDocument",7
-"http://bcodmo","http://schema.org/SiteNavigationElement",6
-"http://bcodmo","http://schema.org/ServiceChannel",6
-"http://bcodmo","http://schema.org/PropertyValueSpecification",5
-"http://bcodmo","http://schema.org/OfferCatalog",3
-"http://bcodmo","http://schema.org/SearchAction",2
-"http://bcodmo","http://schema.org/EntryPoint",2
-"http://bcodmo","http://schema.org/PostalAddress",2
-"http://bcodmo","http://schema.org/ConsumeAction",2
-"http://bcodmo","http://schema.org/Audience",1
-"http://bcodmo","http://schema.org/Thing",1
-"http://bcodmo","http://schema.org/WebPage",1
-"http://bcodmo","http://schema.org/DataCatalog",1
-"http://bcodmo","http://schema.org/ImageObject",1
-"http://bcodmo","http://schema.org/CreateAction",1
-"http://bcodmo","http://schema.org/WebSite",1
-"http://bcodmo","http://schema.org/Action",1
-"http://bcodmo","http://schema.org/ContactPoint",1
-"http://earthref","http://schema.orgGeoCoordinates",10137
-"http://earthref","http://schema.orgDataset",1850
-"http://earthref","http://schema.orgPlace",1843
-"http://earthref","http://schema.orgGeoShape",418
-"http://ieda","http://schema.org/Place",55552
-"http://ieda","http://schema.org/GeoCoordinates",50854
-"http://ieda","http://schema.org/PropertyValue",33741
-"http://ieda","http://schema.org/CreativeWork",28496
-"http://ieda","http://schema.org/DataDownload",11857
-"http://ieda","http://schema.org/Person",8722
-"http://ieda","http://schema.org/Dataset",6025
-"http://ieda","http://schema.org/PostalAddress",6025
-"http://ieda","http://schema.org/ContactPoint",6025
-"http://ieda","http://schema.org/ImageObject",6025
-"http://ieda","http://schema.org/GeoShape",4810
-"http://ieda","http://schema.org/Organization",275
-"http://ieda","http://schema.org/DigitalDocument",1
-"http://iris","http://schema.org/Person",78
-"http://iris","http://schema.org/Dataset",27
-"http://iris","http://schema.org/Organization",26
-"http://iris","http://schema.org/DataCatalog",1
-"http://neotoma","http://schema.org/Organization",23910
-"http://neotoma","http://schema.org/Dataset",11955
-"http://neotoma","http://schema.org/Place",11955
-"http://neotoma","http://schema.org/Person",11955
-"http://neotoma","http://schema.org/DataDownload",11955
-"http://neotoma","http://schema.org/DataCatalog",11955
-"http://neotoma","http://schema.org/GeoCoordinates",11955
-"http://ocd","http://schema.org/PropertyValue",491071
-"http://ocd","http://schema.org/Organization",18174
-"http://ocd","http://schema.org/DataDownload",18171
-"http://ocd","http://schema.org/Dataset",18171
-"http://ocd","http://schema.org/Place",18171
-"http://ocd","http://schema.org/GeoCoordinates",18171
-"http://ocd","http://schema.org/SearchAction",4
-"http://ocd","http://schema.org/EntryPoint",3
-"http://ocd","http://schema.org/WebSite",1
-"http://ocd","http://schema.org/ContactPoint",1
-"http://ocd","http://schema.org/DigitalDocument",1
-"http://ocd","http://schema.org/ProgramMembership",1
-"http://opentopography","http://schema.org/PropertyValue",2893
-"http://opentopography","http://schema.org/Organization",1503
-"http://opentopography","http://schema.org/DataCatalog",399
-"http://opentopography","http://schema.org/Place",399
-"http://opentopography","http://schema.org/GeoShape",399
-"http://opentopography","http://schema.org/Dataset",399
-"http://opentopography","http://schema.org/SearchAction",3
-"http://opentopography","http://schema.org/EntryPoint",2
-"http://opentopography","http://schema.org/ProgramMembership",1
-"http://opentopography","http://schema.org/ImageObject",1
-"http://opentopography","http://schema.org/ContactPoint",1
-"http://unavco","http://schema.org/GeoCoordinates",23441
-"http://unavco","http://schema.org/Place",23441
-"http://unavco","http://schema.org/ContactPoint",4025
-"http://unavco","http://schema.org/Dataset",4025
-"http://unavco","http://schema.org/DataCatalog",4025
-"http://unavco","http://schema.org/Organization",4025
-"http://unavco","http://schema.org/DataDownload",4025
-"http://wikilinkedearth","http://schema.org/CreativeWork",1418
-"http://wikilinkedearth","http://schema.org/Person",939
-"http://wikilinkedearth","http://schema.org/Dataset",697
-"http://wikilinkedearth","http://schema.org/DataDownload",697
-"http://wikilinkedearth","http://schema.org/Place",697
-"http://wikilinkedearth","http://schema.org/GeoCoordinates",697
-"http://wikilinkedearth","http://schema.org/Organization",80
+"BALTO","http://schema.orgPropertyValue",1593
+"BALTO","http://schema.org/Dataset",106
+"BALTO","http://schema.orgDataset",59
+"BALTO","http://schema.orgDataCatalog",59
+"BALTO","http://schema.org/Organization",16
+"BALTO","http://schema.org/DataCatalog",16
+"BALTO","http://schema.org/PostalAddress",16
+"BCO-DMO","http://schema.org/PropertyValue",69597
+"BCO-DMO","http://schema.org/CreativeWork",9755
+"BCO-DMO","http://schema.org/Role",9150
+"BCO-DMO","http://schema.org/Place",9081
+"BCO-DMO","http://schema.org/Organization",4240
+"BCO-DMO","http://schema.org/Dataset",4088
+"BCO-DMO","http://schema.org/DataDownload",3492
+"BCO-DMO","http://schema.org/Event",2067
+"BCO-DMO","http://schema.org/Person",1732
+"BCO-DMO","http://schema.org/Offer",1154
+"BCO-DMO","http://schema.org/GeoShape",792
+"BCO-DMO","http://schema.org/Vehicle",228
+"BCO-DMO","http://schema.org/Service",7
+"BCO-DMO","http://schema.org/DigitalDocument",7
+"BCO-DMO","http://schema.org/SiteNavigationElement",6
+"BCO-DMO","http://schema.org/ServiceChannel",6
+"BCO-DMO","http://schema.org/PropertyValueSpecification",5
+"BCO-DMO","http://schema.org/OfferCatalog",3
+"BCO-DMO","http://schema.org/SearchAction",2
+"BCO-DMO","http://schema.org/EntryPoint",2
+"BCO-DMO","http://schema.org/PostalAddress",2
+"BCO-DMO","http://schema.org/ConsumeAction",2
+"BCO-DMO","http://schema.org/Audience",1
+"BCO-DMO","http://schema.org/Thing",1
+"BCO-DMO","http://schema.org/WebPage",1
+"BCO-DMO","http://schema.org/DataCatalog",1
+"BCO-DMO","http://schema.org/ImageObject",1
+"BCO-DMO","http://schema.org/CreateAction",1
+"BCO-DMO","http://schema.org/WebSite",1
+"BCO-DMO","http://schema.org/Action",1
+"BCO-DMO","http://schema.org/ContactPoint",1
+"MagIC","http://schema.orgGeoCoordinates",10137
+"MagIC","http://schema.orgDataset",1850
+"MagIC","http://schema.orgPlace",1843
+"MagIC","http://schema.orgGeoShape",418
+"IEDA","http://schema.org/Place",55552
+"IEDA","http://schema.org/GeoCoordinates",50854
+"IEDA","http://schema.org/PropertyValue",33741
+"IEDA","http://schema.org/CreativeWork",28496
+"IEDA","http://schema.org/DataDownload",11857
+"IEDA","http://schema.org/Person",8722
+"IEDA","http://schema.org/Dataset",6025
+"IEDA","http://schema.org/PostalAddress",6025
+"IEDA","http://schema.org/ContactPoint",6025
+"IEDA","http://schema.org/ImageObject",6025
+"IEDA","http://schema.org/GeoShape",4810
+"IEDA","http://schema.org/Organization",275
+"IEDA","http://schema.org/DigitalDocument",1
+"IRIS","http://schema.org/Person",78
+"IRIS","http://schema.org/Dataset",27
+"IRIS","http://schema.org/Organization",26
+"IRIS","http://schema.org/DataCatalog",1
+"Neotoma","http://schema.org/Organization",23910
+"Neotoma","http://schema.org/Dataset",11955
+"Neotoma","http://schema.org/Place",11955
+"Neotoma","http://schema.org/Person",11955
+"Neotoma","http://schema.org/DataDownload",11955
+"Neotoma","http://schema.org/DataCatalog",11955
+"Neotoma","http://schema.org/GeoCoordinates",11955
+"Open Core Data","http://schema.org/PropertyValue",491071
+"Open Core Data","http://schema.org/Organization",18174
+"Open Core Data","http://schema.org/DataDownload",18171
+"Open Core Data","http://schema.org/Dataset",18171
+"Open Core Data","http://schema.org/Place",18171
+"Open Core Data","http://schema.org/GeoCoordinates",18171
+"Open Core Data","http://schema.org/SearchAction",4
+"Open Core Data","http://schema.org/EntryPoint",3
+"Open Core Data","http://schema.org/WebSite",1
+"Open Core Data","http://schema.org/ContactPoint",1
+"Open Core Data","http://schema.org/DigitalDocument",1
+"Open Core Data","http://schema.org/ProgramMembership",1
+"Open Topography","http://schema.org/PropertyValue",2893
+"Open Topography","http://schema.org/Organization",1503
+"Open Topography","http://schema.org/DataCatalog",399
+"Open Topography","http://schema.org/Place",399
+"Open Topography","http://schema.org/GeoShape",399
+"Open Topography","http://schema.org/Dataset",399
+"Open Topography","http://schema.org/SearchAction",3
+"Open Topography","http://schema.org/EntryPoint",2
+"Open Topography","http://schema.org/ProgramMembership",1
+"Open Topography","http://schema.org/ImageObject",1
+"Open Topography","http://schema.org/ContactPoint",1
+"UNAVCO","http://schema.org/GeoCoordinates",23441
+"UNAVCO","http://schema.org/Place",23441
+"UNAVCO","http://schema.org/ContactPoint",4025
+"UNAVCO","http://schema.org/Dataset",4025
+"UNAVCO","http://schema.org/DataCatalog",4025
+"UNAVCO","http://schema.org/Organization",4025
+"UNAVCO","http://schema.org/DataDownload",4025
+"LinkedEarth","http://schema.org/CreativeWork",1418
+"LinkedEarth","http://schema.org/Person",939
+"LinkedEarth","http://schema.org/Dataset",697
+"LinkedEarth","http://schema.org/DataDownload",697
+"LinkedEarth","http://schema.org/Place",697
+"LinkedEarth","http://schema.org/GeoCoordinates",697
+"LinkedEarth","http://schema.org/Organization",80
