@@ -1,0 +1,8 @@
+"g","role","type"
+"http://bcodmo","http://schema.org/creator","http://schema.org/Person"
+"http://ieda","http://schema.org/creator","http://schema.org/Person"
+"http://iris","http://schema.org/author","http://schema.org/Person"
+"http://neotoma","http://schema.org/author","http://schema.org/Person"
+"http://opentopography","http://schema.org/contributor","http://schema.org/Organization"
+"http://unavco","http://schema.org/creator","http://schema.org/Organization"
+"http://wikilinkedearth","http://schema.org/contributor","http://schema.org/Person"
