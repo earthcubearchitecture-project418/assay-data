@@ -18,9 +18,10 @@
 * [Dataset](#dataset)
   * [License](#dataset-license)
   * [Authors](#dataset-authors)
-  * [Identifier Usage](#identifier-usage)
+  * [Identifier Usage](#identifier)
   * [Identifier Scheme](#identifier-scheme)
-  * [VariableMeasured Usage](#dataset-variable-usage)
+  * [VariableMeasured Usage](#dataset-variable)
+  * [Funder](#dataset-funder)
   * [Distributions](#dataset-distribution)
   * [Spatial](#dataset-spatial)
   * [Temporal](#dataset-temporal)
@@ -368,7 +369,7 @@ WHERE {
 ORDER BY ?g
 ```
 
-<a id="identifier-usage"></a>
+<a id="identifier"></a>
 ### Identifier Usage ###
 ```
 PREFIX schema: <http://schema.org/>
@@ -395,7 +396,22 @@ WHERE {
 } 
 ```
 
-<a id="dataset-variable-usage"></a>
+<a id="dataset-funder"></a>
+### Funder ###
+```
+PREFIX schema: <http://schema.org/>
+PREFIX gdx: <https://geodex.org/voc/>
+SELECT DISTINCT ?g
+WHERE { 
+  GRAPH ?g {
+    ?s a schema:Dataset .
+    ?s schema:funder ?funder
+  }
+}
+ORDER BY ?g
+```
+
+<a id="dataset-variable"></a>
 ### VariableMeasured Usage ###
 ```
 PREFIX schema: <http://schema.org/>
