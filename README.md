@@ -305,6 +305,26 @@ ORDER BY ?graph ?class ?type ?p
 #ORDER BY DESC(?class_count)
 ```
 
+### PropertyValue by Predicate Count ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?p (COUNT(?s) AS ?count) 
+WHERE { 
+  GRAPH ?graph { 
+    ?s a schema:PropertyValue . ?o ?p ?s . 
+    OPTIONAL { ?o a ?class . }
+    OPTIONAL { ?o schema:additionalType ?type }
+  } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} 
+ORDER BY DESC(?count)
+```
+
 <a id="organization"></a>
 ## Organization ##
 ### Logo ###
