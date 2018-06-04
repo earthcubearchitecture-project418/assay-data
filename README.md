@@ -11,6 +11,7 @@
   * [Properties by Count](#properties-count)
 * [Vocabulary](#vocabulary)
   * [Identifier Count](#vocab-identifier-count)
+  * [Identifier in schema:url](#vocab-identifier-url)
   * [ORCID Count by Provider](#vocab-orcid-count-provider)
   * [PropertyValue by Predicate](#vocab-propertyvalue-predicate)
 * [Organization](#organization)
@@ -266,6 +267,27 @@ WHERE {
 } 
 GROUP BY ?graph ?class ?id_scheme
 ORDER BY ?identifier_count
+```
+
+<a id="vocab-identifier-url"></a>
+### Identifiers found through schema:url ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT ?graph ?propertyID COUNT (?propertyID) as ?property_id_by_url_count
+WHERE { 
+  GRAPH ?graph { 
+    ?s a schema:PropertyValue . 
+    ?o schema:url ?s .
+    OPTIONAL { ?s schema:propertyID ?propertyID . }
+  } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} 
+ORDER BY ?graph ?propertyID
 ```
 
 <a id="vocab-orcid-count-provider"></a>
