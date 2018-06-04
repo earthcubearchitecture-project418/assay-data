@@ -12,6 +12,7 @@
 * [Vocabulary](#vocabulary)
   * [Identifier Count](#vocab-identifier-count)
   * [ORCID Count by Provider](#vocab-orcid-count-provider)
+  * [PropertyValue by Predicate](#vocab-propertyvalue-predicate)
 * [Organization](#organization)
   * [Logo](#resource-logo)
   * [Potential Action Endpoints](#org-potential-action)
@@ -279,6 +280,29 @@ WHERE {
    FILTER REGEX(str(?s), "orcid.org", "i")
   }
 } 
+```
+
+<a id="vocab-propertyvalue-predicate"></a>
+### PropertyValue by Predicate ###
+```
+PREFIX schema: <http://schema.org/>
+SELECT DISTINCT ?p
+#(COUNT(?class) AS ?class_count) 
+WHERE { 
+  GRAPH ?graph { 
+    ?s a schema:PropertyValue . ?o ?p ?s . 
+    OPTIONAL { ?o a ?class . }
+    OPTIONAL { ?o schema:additionalType ?type }
+  } 
+  FILTER (?graph != <http://www.w3.org/2002/07/owl#>)
+  FILTER (?graph != <http://www.openlinksw.com/schemas/virtrdf#>)
+  FILTER (?graph != <http://localhost:8890/sparql>)
+  FILTER (?graph != <http://geolink>)
+  FILTER (?graph != <http://www.w3.org/ns/ldp#>)
+  FILTER (?graph != <http://localhost:8890/DAV/>)
+} 
+ORDER BY ?graph ?class ?type ?p
+#ORDER BY DESC(?class_count)
 ```
 
 <a id="organization"></a>
